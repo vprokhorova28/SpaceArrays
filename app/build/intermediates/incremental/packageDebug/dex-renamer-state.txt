@@ -1,0 +1,4 @@
+#Wed Oct 04 17:43:42 MSK 2017
+base.0=C\:\\Users\\vladimir.iljin\\StudioProjects\\SpaceArrays\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=C\:\\Users\\vladimir.iljin\\StudioProjects\\SpaceArrays\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

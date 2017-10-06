@@ -77,7 +77,7 @@ public class MyDraw extends View {
 		matrix.setScale(0.2f, 0.2f);
 		//Study mathematics, dear young programmer :)  
 		matrix.postRotate((float)Math.toDegrees(Math.atan2(vy, vx)) + 45);
-		matrix.postTranslate(xRocket, yRocket);
+		matrix.postTranslate(x, y);
 		paint.setAlpha(255);
 		canvas.drawBitmap(rocket, matrix, paint);
 	}

@@ -18,8 +18,8 @@ public class MyDraw extends View {
 	}
 
 	Paint paint = new Paint();
-	Bitmap rocket = BitmapFactory.decodeResource(getResources(), R.drawable.rocket);
-	Matrix matrix = new Matrix();
+	Bitmap rocketImage = BitmapFactory.decodeResource(getResources(), R.drawable.rocket);
+	
 	
 	float xRocket = 300, yRocket = 300;
 	float vxRocket = 0.5f, vyRocket = -0.5f;
@@ -74,12 +74,13 @@ public class MyDraw extends View {
 	
 	void drawRocket(Canvas canvas, float x, float y, float vx, float vy)
 	{
+		Matrix matrix = new Matrix();
 		matrix.setScale(0.2f, 0.2f);
 		//Study mathematics, dear young programmer :)  
 		matrix.postRotate((float)Math.toDegrees(Math.atan2(vy, vx)) + 45);
 		matrix.postTranslate(x, y);
 		paint.setAlpha(255);
-		canvas.drawBitmap(rocket, matrix, paint);
+		canvas.drawBitmap(rocketImage, matrix, paint);
 	}
 	
 }

@@ -1,0 +1,4 @@
+#Fri Nov 27 11:17:06 MSK 2020
+base.0=/Users/veronika/AndroidStudioProjects/SpaceArrays/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

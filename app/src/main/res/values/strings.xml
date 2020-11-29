@@ -3,5 +3,17 @@
 
     <string name="app_name">SpaceArrays</string>
     <string name="hello_world">Hello world!</string>
+    <string name="start">  Начать  </string>
+    <string name="white">Белые</string>
+    <string name="multicolored">Любые</string>
+    <string name="dark_yellow">Темно-желтый</string>
+    <string name="light_yellow">Светло-желтые</string>
+    <string name="yellow">Желтые</string>
+    <string name="input_rockets_amount">Введите количество ракет</string>
+    <string name="rockets_amount">Количество ракет</string>
+    <string name="choose_stars_color">Выберите цвет звезд</string>
+    <string name="close">"  Закрыть  "</string>
+    <string name="x">×</string>
+
 
 </resources>

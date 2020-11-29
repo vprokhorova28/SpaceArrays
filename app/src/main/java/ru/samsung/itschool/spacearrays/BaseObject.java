@@ -2,11 +2,11 @@ package ru.samsung.itschool.spacearrays;
 
 import android.graphics.Canvas;
 
-abstract class BaseObject implements Drawable{
+abstract class BaseObject implements Drawable {
     private double x, y;
 
-    BaseObject(double x, double y){
-        this.x =  x;
+    BaseObject(double x, double y) {
+        this.x = x;
         this.y = y;
     }
 

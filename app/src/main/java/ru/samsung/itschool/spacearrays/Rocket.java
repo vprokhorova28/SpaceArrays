@@ -2,10 +2,11 @@ package ru.samsung.itschool.spacearrays;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 
-public class Rocket extends BaseObject implements Moveable, Touchable{
+public class Rocket extends BaseObject implements Moveable, Touchable {
     private float vx, vy;
     private Bitmap image;
     private int w, h;
@@ -20,9 +21,9 @@ public class Rocket extends BaseObject implements Moveable, Touchable{
     }
 
     @Override
-    public void move(){
+    public void move() {
         double x = getX();
-        double  y = getY();
+        double y = getY();
         setX(x + vx);
         setY(y + vy);
     }
@@ -33,39 +34,33 @@ public class Rocket extends BaseObject implements Moveable, Touchable{
         Matrix matrix = new Matrix();
         matrix.setScale(0.2f, 0.2f);
         //Study mathematics, dear young programmer :)
-        /*if (getX() < 30) {
-            vx *= -1;
-
-            double y = getY();
-            setX(y - 120);
-        }
-        if (getX() > w - 30) {
-            vx *= -1;
-            double y = getY();
-            setX(y - 120);
-        }
-        if (getY() < 30){
-            vy *= -1;
-            double x = getX();
-            setX(x + 120);
-        }
-        if (getY() > h - 30){
-            vy *= -1;
-            double x = getX();
-            setX(x - 120);
-        }*/
-
-        matrix.postRotate((float)Math.toDegrees(Math.atan2(vy, vx)) + 45);
-        matrix.postTranslate((float)getX(), (float)getY());
+        matrix.postRotate((float) Math.toDegrees(Math.atan2(vy, vx)) + 45);
+        matrix.postTranslate((float) getX(), (float) getY());
         paint.setAlpha(255);
         canvas.drawBitmap(image, matrix, paint);
+        if (getY() + image.getHeight() < 0) {
+            vy *= -1;
+        } else if (getY() > h) {
+            vy *= -1;
+        }
+        if (getX() + image.getWidth() < 0) {
+            vx *= -1;
+        } else if (getX() > w) {
+            vx *= -1;
+        }
     }
 
     @Override
     public void touch(float x, float y) {
-        if (Math.abs(getX() - x ) <= 100 && Math.abs(getY() - y) <= 100) {
-            setY(y + 120);
-            setX(x - 120);
+        double degree = -Math.atan2(vy, vx) + Math.PI / 4;
+        double x1 = getX();
+        double x2 = getY();
+        double hip = Math.sqrt(2) * 300;
+        double x0 = getX() + hip * Math.cos(degree);
+        double y0 = getY() + hip * Math.sin(degree);
+        if (Math.abs(x0 - x) <= hip && Math.abs(y0 - y) <= hip) {
+            vx *= 2;
+            vy *= 2;
         }
     }
 }

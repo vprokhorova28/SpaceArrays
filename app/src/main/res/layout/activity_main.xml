@@ -2,12 +2,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}" >
+    tools:context="${relativePackage}.${activityClass}">
 
     <ru.samsung.itschool.spacearrays.MyDraw
         android:id="@+id/myDraw1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-         />
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/x"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:text="@string/x"
+        android:textSize="15sp"
+        android:background="#FF0000"
+        android:gravity="center" />
 
 </RelativeLayout>

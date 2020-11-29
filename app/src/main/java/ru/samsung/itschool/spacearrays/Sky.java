@@ -4,18 +4,17 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 
-public class Sky implements Drawable{
+public class Sky implements Drawable {
     private Star[] stars;
 
-    Sky(int w, int h, int n) {
+    Sky(int w, int h, int n, int starsColor) {
         int maxX = w;
         int maxY = h;
         stars = new Star[n];
-        for (int i = 0; i < stars.length; i++)
-        {
+        for (int i = 0; i < stars.length; i++) {
             stars[i] = new Star(Math.random() * maxX,
                     Math.random() * maxY,
-                    (int)(Math.random() * 256));
+                    (int) (Math.random() * 256), starsColor);
         }
     }
 
